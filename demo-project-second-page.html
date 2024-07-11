@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="demo-project-second-page.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>BUSINESS EDIT</title>
+
+</head>
+
+<body>
+   <div class="container-fluid myheader">
+    <div class="row">
+        <button class="sidebar-button btn btn-light d-lg-none  col-2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarToggle"><i class="fa fa-bars"></i></button>
+        
+       <div class="logo  col-3 col-md-3">
+        
+             <h1 >X</h1>
+             <p >MVISC</p>
+            
+        </div>
+        <div class="business-add col-4 col-md-6 text-center"><h3>BUSINESS EDIT</h3></div>
+        <div class="user-icon col-3 col-md-3 text-end " ><h3>V</h3></div>
+   </div>
+</div>
+   <div class="container-main">
+   <div class="collapse d-lg-block sidebar" id="sidebarToggle">
+    <p>DASHBOARD</p>
+        <button type="button" class="btn d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#business-menu" >Business Owner <i class="fas fa-chevron-down" ></i></button>
+        <ul class="collapse" id="business-menu">  
+            <li ><a href="./demo-project-firstpage.html">Add</a></li>
+            <li >All</li>
+        </ul><hr>
+
+        <button type="button" class="btn d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#kiosk-menu" aria-controls="sidebarToggle" aria-expanded="false" aria-label="Toggle navigation" >Kiosk <i  class="fas fa-chevron-down" ></i></button>
+        <ul class="collapse" id="kiosk-menu">
+            <li >Add</li>
+            <li >All</li>
+        </ul><hr>
+
+        <button type="button" class="btn d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#episode-menu" >Episode <i  class="fas fa-chevron-down" ></i></button>
+        <ul class="collapse" id="episode-menu">
+            <li >Add</li>
+        </ul><hr>
+        
+        <button type="button" class="btn d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#customer-menu" >Customer <i  class="fas fa-chevron-down" ></i></button>
+        <ul class="collapse" id="customer-menu">
+            <li >Add</li>
+        </ul><hr>
+
+        <button type="button" class="btn d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#cluster-menu" >Cluster <i  class="fas fa-chevron-down" ></i></button>
+        <ul class="collapse" id="cluster-menu">
+            <li >Add</li>
+        </ul><hr>
+
+    </div>
+    <div class="mynavbar">
+        <div class="nav-items">
+            <button id="profile-button" onclick="profileForm()" >Profile</button>
+            <button id="business-button" onclick="businessForm()">Business</button>
+            <button id="leads-button" onclick="leadsForm()">Leads</button>
+            <button id="complete-order-button" onclick="completeOrderForm()">Complete Order</button>
+            <button id="pending-order-button" onclick="pendingOrderForm()">Pending Order</button>
+            <button>Network</button>
+            <button id="analytics-button" onclick="analyticsForm()">Analytics</button>
+            <button id="meeting-button" onclick="meetingForm()">Meeting</button>
+        
+        </div>
+        <hr>
+        <div class="card card-profile" id="profile-card">
+            <form action="./demo-project-second-page.html" class="form profile-form form-floating">
+            <div class="username row">
+                <label for="username" class="col form-label">Username</label>
+                <input type="text" class="col form-control form-control-sm" name="username" >
+            </div>
+            <div class="firstname row">
+                <label for="firstname" class="col form-label">First Name</label>
+                <input type="text" class="col form-control form-control-sm" name="firstname">
+            </div>
+            <div class="lastname row">
+                <label for="lastname" class="col form-label">Last Name</label>
+                <input type="text" class="col form-control form-control-sm" name="lastname">
+            </div>
+            <div class="number1 row">
+                <label for="mobilenumber1" class="col form-label">Mobile Number 1</label>
+                <input type="number"  class="col form-control form-control-sm" name="mobilenumber1">
+            </div>
+            <div class="number2 row">
+                <label for="mobilenumber2" class="col form-label">Mobile Number 2</label>
+                <input type="number"  class="col form-control form-control-sm" name="mobilenumber2">
+            </div>
+            <div class="email1 row">
+                <label for="email1" class="col form-label">Email-Id 1</label>
+                <input type="email" class="col form-control form-control-sm" name="email1">
+            </div>
+            <div class="email2 row">
+                <label for="email2" class="col form-label">Email-Id 2</label>
+                <input type="email" class="col form-control form-control-sm" name="email2">
+            </div>
+            <div class="address row">
+                <label for="address" class="col form-label">Location</label>
+                <textarea class="col form-control form-control-sm"  name="address"></textarea>
+            </div>
+            <div class="btns row ">
+                <input type="submit" class="col btn btn-success form-control form-control-sm" value="SUBMIT">
+                <input type="submit" class="col btn btn-success form-control form-control-sm" value="SAVE">
+                <input type="submit" class="col btn btn-success form-control form-control-sm" value="CHANGE PASSWORD">
+            </div>
+        
+            </form>
+        </div>
+        <div class="card card-business" id="business-card">
+            <form action="./demo-project-second-page.html" class="form business-form">
+                <div class="username row">
+                    <label for="username" class="col form-label">Brand Name</label>
+                    <input type="text" class="col form-control form-control-sm" name="username" >
+                </div>
+                <div class="firstname row ">
+                    <label for="firstname" class="col form-label">Brand Keyword</label>
+                    <input type="text" class="col form-control form-control-sm" name="firstname">
+                </div>
+                <div class="lastname row">
+                    <label for="lastname" class="col form-label">Brand Mobile</label>
+                    <input type="text" class="col form-control form-control-sm" name="lastname">
+                </div>
+                <div class="email row">
+                    <label for="email" class="col form-label">Brand Email</label>
+                    <input type="email" min="7" max="10" class="col form-control form-control-sm" name="email">
+                </div>
+                <div class="address1 row">
+                    <label for="mobilenumber2" class="col form-label">Brand Address 1</label>
+                    <input type="text" min="7" max="10" class="col form-control form-control-sm" name="address1">
+                </div>
+                <div class="address2 row">
+                    <label for="address2" class="col form-label">Brand Address 2</label>
+                    <input type="text" class="col form-control form-control-sm" name="address2">
+                </div>
+                <div class="city row">
+                    <label for="city" class="col form-label">Brand City</label>
+                    <input type="text" class="col form-control form-control-sm" name="city">
+                </div>
+                <div class="state row">
+                    <label for="state" class="col form-label">Brand State</label>
+                    <input type="text" class="col form-control form-control-sm" name="state">
+                </div>
+                <div class="country row">
+                    <label for="country" class="col form-label">Country</label>
+                    <input type="text" class="col form-control form-control-sm" name="country">
+                </div>
+                <div class="pincode row">
+                    <label for="pincode row" class="col form-label">Pincode</label>
+                    <input type="text" class="col form-control form-control-sm" name="pincode">
+                </div>
+                
+                
+            </form>
+        </div>
+        <div class="card meeting-card" id="meeting-card">
+            <form class="form meeting-form form-floating">
+            <div class="next-meeting-date row">
+                <label for="next-meeting-date" class="col form-label">Next Meeting Date</label>
+                <input type="date" name="next-meeting-date" class="col form-control form-control-sm">
+            </div>
+            <div class="meeting-location row">
+                <label for="meeting-location" class="col form-label">Meeting Location</label>
+                <input type="text" name="meeting-location" class="col form-control form-control-sm">
+            </div>
+            <div class="visitor row">
+                <label for="visitor" class="col form-label ">Visitor</label>
+                <input type="text" name="visitor" class="col form-control form-control-sm">
+            </div>
+            <div class="speaker row">
+                <label for="speaker" class="col form-label">Speaker</label>
+                <input type="text" name="speaker" class="col form-control form-control-sm">
+            </div>
+            <div class="referal row">
+                <label for="referal" class="col form-label">Referal</label>
+                <input type="text" name="referal" class="col form-control form-control-sm">
+            </div>
+            <div class="one-on-one row">
+                <label for="one-on-one" class="col form-label">1-on-1</label>
+                <input type="text" name="one-on-one" class="col form-control form-control-sm">
+            </div>
+        </form>
+        </div>
+        <div id="analytics-card" class="card analytics-card p-5" >
+                <canvas id="myChart" class="my-chart" ></canvas>  
+        </div>
+        <div id="pending-order">
+            <div class="filter-bar" >
+                <div class="filter-bar-left form-floating">
+                    <input type="text" id="search" placeholder="🔍 Search..." >
+                </div>
+                <div class="filter-bar-right">
+                <select id="date-filter">
+                    <option value="">No Date</option>
+                </select>
+                
+                <button onclick="" class="btn filter">
+                    <i class="fas fa-filter"></i>Filter</button>
+                <button onclick="" class="btn export">
+                    <i class="fas fa-file-export"></i>Export</button>
+                <button onclick="" class="btn print">
+                    <i class="fas fa-print"></i>Print</button>
+                    </div>
+            </div>
+            <div class="table-responsive-md">
+            <table class="table table-bordered table-sm">
+                <thead>
+                    <tr class="table-success">
+                        <th>Name</th>
+                        <th>Cluster</th>
+                        <th>State</th>
+                        <th>Mandal</th>
+                        <th>Village</th>
+                        <th>Mobile</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+   </div>
+    <script>
+            
+            var profileCard = document.getElementById('profile-card');
+            var businessCard = document.getElementById('business-card');
+            var meetingCard = document.getElementById('meeting-card');
+            var analyticsCard = document.getElementById('analytics-card');
+            var pendingOrder = document.getElementById('pending-order');
+
+            var profileButton = document.getElementById('profile-button');
+            var meetingButton = document.getElementById('meeting-button');
+            var analyticsButton = document.getElementById('analytics-button');
+            var pendingOrderButton = document.getElementById('pending-order-button');
+            var completeOrderButton = document.getElementById('complete-order-button');
+            var leadsButton = document.getElementById('leads-button');
+            var businessButton = document.getElementById('business-button');
+
+        function resetButtonStyles(){
+            var buttons = [profileButton, businessButton, leadsButton, completeOrderButton, pendingOrderButton, analyticsButton, meetingButton];
+            buttons.forEach(button =>{
+                button.style.color = 'black';
+                button.style.backgroundColor = "rgba(150, 147, 147, 0.929)";
+            })
+        }
+        function hideAllCards(){
+            var cards = [profileCard, businessCard, pendingOrder, analyticsCard, meetingCard];
+            cards.forEach(card =>{
+                card.style.display = 'none';
+            })
+        }
+        function hideSidebar() {
+            var sidebar = document.getElementById('sidebarToggle');
+            sidebar.classList.remove('show');
+        }
+
+        function profileForm() {
+
+            resetButtonStyles();
+            hideAllCards();
+            hideSidebar();
+
+            profileButton.style.backgroundColor = "darkgreen";
+            profileButton.style.color = "white";
+            profileCard.style.display = "block";
+             
+        }
+        function businessForm(){
+            resetButtonStyles();
+            hideAllCards();
+            hideSidebar();
+
+            businessButton.style.backgroundColor = 'darkgreen';
+            businessButton.style.color = 'white';
+            businessCard.style.display = 'block';
+        }
+        function leadsForm(){
+            resetButtonStyles();
+            hideAllCards();
+            hideSidebar();
+
+            leadsButton.style.backgroundColor = "darkgreen"
+            leadsButton.style.color = "white";
+            pendingOrder.style.display = 'block';
+            pendingOrder.style.margin = '5px';
+
+        }
+        function meetingForm() {
+
+                resetButtonStyles();
+                hideAllCards();
+                hideSidebar();
+
+                meetingButton.style.backgroundColor = "darkgreen";
+                meetingButton.style.color = "white";
+                meetingCard.style.display = "block";
+                    
+            }
+        function analyticsForm(){
+            resetButtonStyles();
+            hideAllCards();
+            hideSidebar();
+
+            analyticsButton.style.backgroundColor = "darkgreen";
+            analyticsButton.style.color = "white";
+            analyticsCard.style.display = "block";
+            
+
+        }
+        function pendingOrderForm(){
+            
+            resetButtonStyles();
+            hideAllCards();
+            hideSidebar();
+
+            pendingOrderButton.style.backgroundColor = "darkgreen"
+            pendingOrderButton.style.color = "white";
+            pendingOrder.style.display = 'block';
+            pendingOrder.style.margin = '15px';
+
+
+        }
+        function completeOrderForm(){
+            resetButtonStyles();
+            hideAllCards();
+            hideSidebar();
+            
+            completeOrderButton.style.backgroundColor = "darkgreen"
+            completeOrderButton.style.color = "white";
+            pendingOrder.style.display = 'block';
+            pendingOrder.style.margin = '10px';
+
+        }
+        
+        
+        let labels = ['', '', '', '', '', '', '', '','','','']
+        let itemData = [200, 310, 300, 500, 430, 600, 800, 900, 620, 680, 500];
+    const data={
+    labels: labels,
+    datasets: [{
+        
+        data: itemData,
+        borderColor: 'red'
+        }]
+    }
+    
+    const config = {
+        type :'line',
+        data : data,
+        options:{
+         responsive:true,
+         maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false 
+            }
+        },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date',
+                        font: {
+                            size: 14,
+                            weight: 700
+                        },
+                        color:'black'
+
+                    },
+                    ticks:{
+                        display:false,
+                        
+                    },
+                    grid:{
+                        display:false
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text:'Amount',
+                        font: {
+                            size: 14,
+                            weight: 700
+                        }
+                    },
+                    ticks:{
+                        stepSize: 200
+                    },
+                    grid:{
+                        display:false
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    const ctx = document.getElementById('myChart');
+    const myChart = new Chart(ctx,config);
+
+    </script> 
+    
+</body>
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <title>BUSINESS ADD</title>
+    <style>
+        .myheader .row{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            color:green;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color:white;
+            box-shadow: 0px 8px 5px rgba(152, 152, 148, 0.774);
+            
+        }
+        .myheader{
+            width:100%;
+        }
+        
+        .user-icon{
+            background-color: rgb(161, 169, 169);
+            border-radius: 50%;
+            margin-right: 20px;
+            padding-top: 5px;
+            width:40px;
+            height:40px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            cursor:pointer;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .logo{
+            display:flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .logo p{
+            font-size: 20px;
+            margin-left: 40px;
+            font-weight: 600;
+            padding-top:10px;
+        }
+        .logo h1{
+            font-weight: 400;
+        }
+        .sidebar{
+            width:300px;
+            height:90vh;
+            background-color:darkgreen;
+            border-top-right-radius:20px;
+            border-bottom-right-radius:20px;
+            padding:10px;
+            display: flex;
+            flex-direction: column;
+            color:white;
+            font-size: 25px;
+            margin-right:150px;
+            margin-left: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .sidebar .btn{
+            color: white;
+            font-size: 18px;
+            border:none;
+            width:100%;
+        }
+        .sidebar p{
+            padding-left: 13px;
+            padding-bottom: 10px;
+            font-weight: 400;
+            font-size: 22px;
+        } 
+        .sidebar ul li{
+            font-size: 18px;
+            padding-top: 10px;
+            list-style-type: none;
+            text-decoration: none;    
+        }
+        body{
+            background-color: rgb(216, 228, 237);
+        }
+        .container-main{
+            display: flex;
+            
+            
+        }
+        .card{
+            width:800px;
+            height:fit-content;
+            margin-right:200px;
+            margin-top:30px;
+            padding:15px;
+            padding-right:250px;
+            padding-left:60px;
+        }
+        form div{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .form-control{
+            width:300px;
+            margin-left: 10px;
+            margin:5px;
+            border-radius: 8px;
+            border:1.5px solid black;
+        }
+        .form-label{
+            font-weight: 500;
+            
+        }
+        form .btn{
+            margin-left: 180px;
+            width:100px;
+            height:35px;
+            margin-top: 15px;
+        }
+        .business-add{
+            font-weight: 600;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    @media (max-width: 426px) {
+     .myheader .business-add h3{
+        font-size: smaller;
+     }
+     .myheader .logo h1{
+        font-size: small;
+
+     }
+     .myheader .logo p{
+        font-size: small;
+     }
+     .logo{
+        justify-content: center;
+        
+     }
+     .logo, .business-add{
+        margin-top: 7px;
+    }
+    
+    .myheader .user-icon h3{
+        font-size: smaller;
+        margin-top: 8px;
+    }
+    .myheader .user-icon{
+        padding:2px;
+        height:20px;
+        width: 20px;
+        margin-bottom: 0;
+        
+        
+    }
+    .myheader .sidebar-button{
+        margin-left: 0;
+    }
+    .myheader {
+        width:100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .container-main{
+        flex-direction: column;
+        width:100%;
+        margin-left: 0;
+        margin-right: 0;
+        
+    }
+    
+    .sidebar{
+        width:70%;
+        height:fit-content;
+        position:fixed;
+        top:40px;
+        overflow-x: hidden;
+        z-index:1000;
+        transition: 0.5s;
+    }
+    .card{
+            width:97%;
+            height:fit-content;
+            margin:0;
+            padding:10px;
+            margin-top:5px;
+            margin-left: 5px;
+            margin-top: 10px;
+            
+        }
+    .business-add-form {
+        width:fit-content;
+        justify-content: space-between;
+        padding:0px;
+        margin:2px;
+        font-size: x-small;
+        font-weight: 700;
+        position:relative;
+        left:0px;
+
+    }
+    .business-add-form .form-control{
+        font-size: smaller;
+        font-weight:600;
+    }
+    .myheader  .business-add{
+        position:relative;
+        font-size: smaller;
+        right:40px;
+    }
+    .myheader .logo{
+        position:relative;
+        right:20px;
+    }
+    .myheader .logo h1{
+        margin-top: 2px;
+    }
+    .myheader .logo p{
+        position: relative;
+        right:30px;
+    }
+    .myheader .sidebar-button{
+        position: relative;
+        right:6px;
+    }
+    
+    }
+    @media (min-width:429px) and (max-width:431px){
+     .myheader .business-add h3{
+        font-size: smaller;
+     }
+     .myheader .logo h1{
+        font-size: small;
+
+     }
+     .myheader .logo p{
+        font-size: small;
+     }
+     .logo{
+        justify-content: center;
+        
+     }
+     .logo, .business-add{
+        margin-top: 7px;
+    }
+    
+    .myheader .user-icon h3{
+        font-size: smaller;
+        margin-top: 8px;
+    }
+    .myheader .user-icon{
+        padding:2px;
+        height:20px;
+        width: 20px;
+        margin-bottom: 0;
+        
+        
+    }
+    .myheader .sidebar-button{
+        margin-left: 0;
+    }
+    .myheader {
+        width:100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .container-main{
+        flex-direction: column;
+        width:100%;
+        margin-left: 0;
+        margin-right: 0;
+        
+    }
+    
+    .sidebar{
+        width:70%;
+        height:fit-content;
+        position:fixed;
+        top:40px;
+        overflow-x: hidden;
+        z-index:1000;
+        transition: 0.5s;
+    }
+    .card{
+            width:97%;
+            height:fit-content;
+            margin:0;
+            padding:10px;
+            margin-top:5px;
+            margin-left: 5px;
+            margin-top: 10px;
+            
+        }
+    .business-add-form {
+        width:fit-content;
+        justify-content: space-between;
+        padding:0px;
+        margin:2px;
+        font-size: x-small;
+        font-weight: 700;
+        position:relative;
+        left:0px;
+
+    }
+    .business-add-form .form-control{
+        font-size: smaller;
+        font-weight:600;
+    }
+    .myheader  .business-add{
+        position:relative;
+        font-size: smaller;
+        right:40px;
+    }
+    .myheader .logo{
+        position:relative;
+        right:20px;
+    }
+    .myheader .logo h1{
+        margin-top: 2px;
+    }
+    .myheader .logo p{
+        position: relative;
+        right:30px;
+    }
+    .myheader .sidebar-button{
+        position: relative;
+        right:6px;
+    }
+    
+    }
+    @media (min-width:420px) and (max-width:750px){
+        .card{
+            width:80%;
+            position:relative;
+            height:fit-content;
+            margin:0px;
+            
+            padding:30px;
+            margin-top:5px;
+            left:40px;
+            top:30px;
+            bottom:30px;
+        }
+    }
+
+    @media (min-width:760px) and (max-width:1000px){
+    .myheader  .business-add{
+        position:relative;
+        right:90px;
+    }
+    .myheader .logo{
+        position:relative;
+        right:40px;
+    }
+    .sidebar-button{
+        position: relative;
+        right:20px;
+        font-size: x-large;
+    }
+    .logo, .business-add, .user-icon{
+        margin-top: 5px;
+    }
+    
+    .myheader .sidebar-button{
+        margin-left: 0;
+    }
+    .myheader {
+        width:100%;
+        justify-content: space-between;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .container-main{
+        flex-direction: column;
+        width:100%;
+        margin-left: 0;
+        margin-right: 0;
+        
+    }
+    
+    .sidebar{
+        width:30%;
+        height:fit-content;
+        position:fixed;
+        top:47px;
+        overflow-x: hidden;
+        z-index:1000;
+        transition: 0.5s;
+    }
+    
+    .card{
+            width:80%;
+            position:relative;
+            height:fit-content;
+            margin:0px;
+            padding:30px;
+            margin-top:5px;
+            left:80px;
+            top:30px;
+    
+        }
+    .business-add-form {
+        width:fit-content;
+        justify-content: space-between;
+        padding:0px;
+        margin:20px;
+        font-size: medium;
+        font-weight: 700;
+        align-items: center;
+        padding-left: 90px;
+        
+
+    }
+    
+    .business-add-form .form-control{
+        font-size: medium;
+        font-weight:600;
+    }
+    }
+    @media (min-width:980px) and (max-width:1439px){
+        .card{
+            width:100%;
+            padding: 20px;
+            margin: 0;
+            margin-top:30px;
+            margin-right:50px;
+        }
+        .card .business-add-form{
+            width:fit-content;
+            padding:0px;
+            margin:0px;
+        }
+    }
+    @media (min-width:2500px) and (max-width:2800px){
+    .sidebar{
+        position:fixed;
+        left:0;
+        width:500px;
+    }
+    .sidebar .btn{
+        font-size: 40px;
+    }
+    .sidebar p{
+        font-size: 40px;
+    }
+    .sidebar ul li{
+        font-size: 35px;
+    }
+    .card{
+        position:relative;
+        left:600px;
+        width:60%;
+        height:70vh;
+    }
+    .business-add-form{
+        font-size: xx-large;
+        padding:100px;
+    }
+    .business-add-form .form-control{
+        font-size: x-large;
+        
+    }
+    
+    .business-add-form .btn{
+        font-size: xx-large;
+        width:200px;
+        height: fit-content;
+        position: relative;
+        left:350px;
+        margin-top: 30px;
+    }
+    }
+        
+    </style>
+</head>
+
+<body>
+   <div class="container-fluid myheader">
+    <div class="row">
+        <button class="sidebar-button btn btn-light d-lg-none  col-2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarToggle"><i class="fa fa-bars"></i></button>
+        
+        <div class="logo col-3 col-md-3">
+            <h1>X</h1>
+            <p>MVISC</p></div>
+        <div class="business-add col-4 col-md-6 text-center"><h3>BUSINESS ADD</h3></div>
+        <div class="user-icon col-3 col-md-3 text-end"><h3>V</h3></div>
+    </div>
+   </div>
+   <div class="container-main">
+   <div class="collapse d-lg-block  sidebar" id="sidebarToggle">
+    <p>DASHBOARD</p>
+    <button type="button" class="btn d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#business-menu" >Business Owner <i class="fas fa-chevron-down" ></i></button>
+        <ul class="collapse" id="business-menu">
+            <li >Add</li>
+            <li >All</li>
+     </ul><hr>
+
+        <button type="button" class="btn d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#kiosk-menu" >Kiosk <i  class="fas fa-chevron-down" ></i></button>
+        <ul class="collapse" id="kiosk-menu">
+            <li >Add</li>
+            <li >All</li>
+        </ul><hr>
+
+        <button type="button" class="btn d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#episode-menu" >Episode <i  class="fas fa-chevron-down" ></i></button>
+        <ul class="collapse" id="episode-menu">
+            <li >Add</li>
+        </ul><hr>
+        
+        <button type="button" class="btn d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#customer-menu" >Customer <i  class="fas fa-chevron-down" ></i></button>
+        <ul class="collapse" id="customer-menu">
+            <li >Add</li>
+        </ul><hr>
+
+        <button type="button" class="btn d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#cluster-menu" >Cluster <i  class="fas fa-chevron-down" ></i></button>
+        <ul class="collapse" id="cluster-menu">
+            <li >Add</li>
+        </ul><hr>
+
+    </div>
+    <div class="card">
+        <form action="./demo-project-second-page.html" class="form business-add-form form-floating">
+            <div class="username row">
+                <label for="username" class="col form-label">Username</label>
+                <input type="text" class="col form-control form-control-sm" name="username" >
+            </div>
+            <div class="firstname row">
+            <label for="firstname" class="col form-label">First Name</label>
+            <input type="text" class="col form-control form-control-sm" name="firstname">
+        </div>
+        <div class="lastname row">
+            <label for="lastname" class="col form-label">Last Name</label>
+            <input type="text" class="col form-control form-control-sm" name="lastname">
+        </div>
+        <div class="number1 row">
+            <label for="mobilenumber1" class="col form-label">Mobile Number 1</label>
+            <input type="number"  class="col form-control form-control-sm" name="mobilenumber1">
+        </div>
+        <div class="number2 row">
+            <label for="mobilenumber2" class="col form-label">Mobile Number 2</label>
+            <input type="number"  class="col form-control form-control-sm" name="mobilenumber2">
+        </div>
+        <div class="email1 row ">
+            <label for="email1" class="col form-label">Email-Id 1</label>
+            <input type="email" class="col form-control form-control-sm" name="email1">
+        </div>
+        <div class="email2 row">
+            <label for="email2" class="col form-label">Email-Id 2</label>
+            <input type="email" class="col form-control form-control-sm" name="email2">
+        </div>
+        <div class="address row">
+            <label for="address" class="col form-label">Address</label>
+            <textarea class="col form-control form-control-sm" rows="2" name="address"></textarea>
+        </div>
+            <input type="submit" class="btn btn-success">
+        </form>
+        </div>
+        
+    </div>
+</body>
+</html>
